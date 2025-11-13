@@ -1,17 +1,44 @@
+<!--
+    Portfolio Homepage - HTML Structure
+    ==================================
+    Diese Datei definiert die Struktur einer Portfolio-Website mit mehreren Sektionen:
+    - Header mit Navigation
+    - Hero-Bereich mit Willkommensnachricht
+    - Projekte-Sektion zur Darstellung von Arbeiten
+    - Über-mich-Sektion mit persönlichen Informationen
+    - Kontakt-Bereich für Kommunikationsmöglichkeiten
+    - Footer mit Copyright-Informationen
+-->
 <!DOCTYPE html>
+<!-- HTML5 Doctype für moderne Standards -->
 <html lang="de">
 <head>
+    <!-- Zeichensatz für korrekte Darstellung von Umlauten und Sonderzeichen -->
     <meta charset="UTF-8">
+    
+    <!-- Viewport-Einstellungen für responsive Design auf mobilen Geräten -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta-Beschreibung für Suchmaschinen-Optimierung (SEO) -->
     <meta name="description" content="Portfolio - Meine Projekte">
+    
+    <!-- Titel der Webseite, wird im Browser-Tab angezeigt -->
     <title>Meine Projekte</title>
+    
+    <!-- Verknüpfung zur externen CSS-Datei für Styling -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header-Bereich mit Navigation -->
     <header>
+        <!-- Navigations-Container mit flexiblem Layout -->
         <nav class="nav-container">
+            <!-- Logo/Markenname der Website -->
             <div class="logo">Portfolio</div>
+            
+            <!-- Navigationsmenü als ungeordnete Liste -->
             <ul class="nav-links">
+                <!-- Interne Links zu verschiedenen Sektionen der Seite -->
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projekte</a></li>
                 <li><a href="#about">Über mich</a></li>
@@ -20,64 +47,142 @@
         </nav>
     </header>
 
+    <!-- Hauptinhalt der Website -->
     <main>
+        <!-- Hero-Sektion: Erster Eindruck und Begrüßung der Besucher -->
         <section id="home" class="hero">
             <div class="hero-content">
+                <!-- Hauptüberschrift mit Willkommensnachricht -->
                 <h1>Willkommen zu meinem Portfolio</h1>
+                
+                <!-- Untertitel mit kurzer Beschreibung -->
                 <p>Entdecken Sie meine Projekte und Arbeiten</p>
+                
+                <!-- Call-to-Action Button zur Navigation zu den Projekten -->
                 <a href="#projects" class="cta-button">Projekte ansehen</a>
             </div>
         </section>
 
+        <!-- Projekte-Sektion: Showcase der wichtigsten Arbeiten -->
         <section id="projects" class="projects">
             <div class="container">
+                <!-- Überschrift der Projekte-Sektion -->
                 <h2>Meine Projekte</h2>
+                
+                <!-- Grid-Layout für die Anordnung der Projekt-Karten -->
                 <div class="projects-grid">
+                    <!-- Erste Projekt-Karte: TermiX - Modern Terminal Application -->
                     <div class="project-card">
+                        <!-- Platzhalter-Bereich für Projekt-Bild -->
                         <div class="project-image">
+                            <!-- Terminal-Emoji als Symbol für die moderne Terminal-Anwendung -->
+                            <div class="placeholder-image">💻</div>
+                        </div>
+                        
+                        <!-- Inhalt der Projekt-Karte -->
+                        <div class="project-content">
+                            <!-- Projekt-Titel -->
+                            <h3>TermiX - Modern Terminal</h3>
+                            
+                            <!-- Detaillierte Projekt-Beschreibung -->
+                            <p>Eine next-generation portable Terminal-Anwendung für Linux und Windows mit Multi-Tab-Support, Smart Command Suggestions, SSH-Manager, Markdown-Editor und sowohl TUI als auch GUI Interface.</p>
+                            
+                            <!-- Technologie-Tags zur Kategorisierung -->
+                            <div class="project-tags">
+                                <span class="tag">Rust</span>
+                                <span class="tag">Terminal</span>
+                                <span class="tag">GUI/TUI</span>
+                                <span class="tag">SSH</span>
+                            </div>
+                            
+                            <!-- Link zum GitHub-Repository (öffnet in neuem Tab) -->
+                            <a href="https://github.com/janquillfeldt/terminal-app" target="_blank" class="project-link">Mehr erfahren →</a>
+                        </div>
+                    </div>
+
+                    <!-- Zweite Projekt-Karte: Learning Unit Project -->
+                    <div class="project-card">
+                        <!-- Platzhalter-Bereich für Projekt-Bild -->
+                        <div class="project-image">
+                            <!-- Graduierungshut-Emoji als Symbol für Lernprojekt -->
                             <div class="placeholder-image">🎓</div>
                         </div>
+                        
+                        <!-- Inhalt der zweiten Projekt-Karte -->
                         <div class="project-content">
-                            <h3>Learning Unit Project</h3>
-                            <p>Interaktive Lerneinheit für Python, JavaScript & HTML/CSS - Mit Terminal- und Web-Version, vollständigen Grundlagen-Guides und 16 praktischen Übungen.</p>
+                            <!-- Projekt-Titel -->
+                            <h3>Interactive Learning Unit</h3>
+                            
+                            <!-- Projekt-Beschreibung mit Fokus auf Bildung und Technologien -->
+                            <p>Umfassende Lerneinheit für Python, JavaScript & HTML/CSS - Von Null bis anwendungsbereit mit Terminal- und Web-Version, vollständigen Grundlagen-Guides und praktischen Übungen.</p>
+                            
+                            <!-- Technologie-Tags für dieses Projekt -->
                             <div class="project-tags">
                                 <span class="tag">Python</span>
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">HTML/CSS</span>
+                                <span class="tag">Flask</span>
                             </div>
+                            
+                            <!-- Link zum GitHub-Repository -->
                             <a href="https://github.com/janquillfeldt/learning-unit-project" target="_blank" class="project-link">Mehr erfahren →</a>
                         </div>
                     </div>
-
+                </div> <!-- Ende projects-grid -->                    <!-- Dritte Projekt-Karte: Notion Vorlagen Premium -->
                     <div class="project-card">
+                        <!-- Platzhalter-Bereich für Projekt-Bild -->
                         <div class="project-image">
-                            <div class="placeholder-image">💻</div>
+                            <!-- Notizbuch-Emoji als Symbol für Notion-Vorlagen -->
+                            <div class="placeholder-image">�</div>
                         </div>
+                        
+                        <!-- Inhalt der dritten Projekt-Karte -->
                         <div class="project-content">
-                            <h3>Terminal-App</h3>
-                            <p>Eine moderne Terminal-Anwendung entwickelt in Rust, die eine effiziente und benutzerfreundliche Kommandozeilen-Schnittstelle bietet.</p>
+                            <!-- Projekt-Titel -->
+                            <h3>Notion Vorlagen Premium</h3>
+                            
+                            <!-- Projekt-Beschreibung mit Fokus auf Produktivität und Organisation -->
+                            <p>Deutschsprachiges Komplettpaket mit 60+ Notion-Datenbanken für Produktivität, Wissensmanagement, Finanzen und Gesundheit. Inklusive Premium-Systeme für Haushaltsbuch und PKM (Personal Knowledge Management).</p>
+                            
+                            <!-- Technologie-Tags für dieses Projekt -->
                             <div class="project-tags">
-                                <span class="tag">Rust</span>
-                                <span class="tag">Terminal</span>
-                                <span class="tag">CLI</span>
+                                <span class="tag">Notion</span>
+                                <span class="tag">Produktivität</span>
+                                <span class="tag">Templates</span>
+                                <span class="tag">CSV</span>
                             </div>
-                            <a href="https://github.com/janquillfeldt/terminal-app" target="_blank" class="project-link">Mehr erfahren →</a>
+                            
+                            <!-- Link zum GitHub-Repository -->
+                            <a href="https://github.com/janquillfeldt/Notion_Vorlagen" target="_blank" class="project-link">Mehr erfahren →</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </div> <!-- Ende projects-grid -->
+            </div> <!-- Ende container -->
+        </section> <!-- Ende projects section -->
 
+        <!-- Über-mich-Sektion: Persönliche Informationen und Fähigkeiten -->
         <section id="about" class="about">
             <div class="container">
+                <!-- Überschrift der About-Sektion -->
                 <h2>Über mich</h2>
+                
+                <!-- Zweispaltiges Layout für Text und Fähigkeiten -->
                 <div class="about-content">
+                    <!-- Linke Spalte: Persönlicher Text -->
                     <div class="about-text">
+                        <!-- Begrüßung und kurze Selbstvorstellung -->
                         <p>Hallo! Ich bin ein leidenschaftlicher Entwickler, der gerne an interessanten Projekten arbeitet. Auf dieser Seite zeige ich eine Auswahl meiner Arbeiten.</p>
+                        
+                        <!-- Zusätzliche Informationen über Erfahrung und Lernbereitschaft -->
                         <p>Ich habe Erfahrung in verschiedenen Technologien und bin immer bereit, neue Herausforderungen anzunehmen und neue Dinge zu lernen.</p>
                     </div>
+                    
+                    <!-- Rechte Spalte: Fähigkeiten und Technologien -->
                     <div class="skills">
+                        <!-- Überschrift für Fähigkeiten-Bereich -->
                         <h3>Fähigkeiten</h3>
+                        
+                        <!-- Liste der technischen Fähigkeiten als Tags -->
                         <div class="skills-list">
                             <span class="skill">HTML/CSS</span>
                             <span class="skill">JavaScript</span>
@@ -87,29 +192,44 @@
                             <span class="skill">Git</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </div> <!-- Ende about-content -->
+            </div> <!-- Ende container -->
+        </section> <!-- Ende about section -->
 
+        <!-- Kontakt-Sektion: Kommunikationsmöglichkeiten -->
         <section id="contact" class="contact">
             <div class="container">
+                <!-- Überschrift der Kontakt-Sektion -->
                 <h2>Kontakt</h2>
+                
+                <!-- Einladender Text zur Kontaktaufnahme -->
                 <p>Interessiert an einer Zusammenarbeit? Kontaktieren Sie mich!</p>
+                
+                <!-- Container für Kontakt-Links -->
                 <div class="contact-links">
+                    <!-- E-Mail-Link (öffnet Standard-E-Mail-Programm) -->
                     <a href="mailto:your.email@example.com" class="contact-button">E-Mail</a>
+                    
+                    <!-- GitHub-Profil-Link (öffnet in neuem Tab) -->
                     <a href="https://github.com/janquillfeldt" class="contact-button" target="_blank">GitHub</a>
+                    
+                    <!-- LinkedIn-Profil-Link (öffnet in neuem Tab) -->
                     <a href="https://linkedin.com" class="contact-button" target="_blank">LinkedIn</a>
                 </div>
-            </div>
-        </section>
-    </main>
+            </div> <!-- Ende container -->
+        </section> <!-- Ende contact section -->
+    </main> <!-- Ende main content -->
 
+    <!-- Footer-Bereich mit Copyright-Informationen -->
     <footer>
         <div class="container">
+            <!-- Copyright-Hinweis -->
             <p>&copy; 2024 Portfolio. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
+    <!-- Einbindung der JavaScript-Datei für Interaktivität -->
+    <!-- Wird am Ende geladen, damit das DOM vollständig verfügbar ist -->
     <script src="script.js"></script>
 </body>
 </html>
