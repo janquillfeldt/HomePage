@@ -1,0 +1,461 @@
+/*
+=============================================================================
+Portfolio Website - Stylesheet
+=============================================================================
+Diese CSS-Datei enthält alle Stile für die Portfolio-Website.
+Organisiert in folgende Bereiche:
+1. Reset und Basis-Stile
+2. CSS Custom Properties (Variablen)
+3. Typografie und Layout
+4. Navigation
+5. Hero-Sektion
+6. Projekte-Bereich
+7. Über-mich-Sektion
+8. Kontakt-Bereich
+9. Footer
+10. Animationen
+11. Responsive Design
+=============================================================================
+*/
+
+/* Reset und Basis-Stile */
+/* Entfernt Browser-Standard-Margins und -Paddings für konsistente Darstellung */
+* {
+    margin: 0;
+    padding: 0;
+    /* Border-box sorgt dafür, dass Padding und Border in der Gesamtbreite enthalten sind */
+    box-sizing: border-box;
+}
+
+/* CSS Custom Properties (Variablen) für konsistente Farbgebung und Schatten */
+:root {
+    /* Hauptfarben der Website */
+    --primary-color: #2563eb;    /* Primäres Blau für Akzente */
+    --secondary-color: #1e40af;   /* Dunkleres Blau für Hover-Effekte */
+    
+    /* Textfarben für verschiedene Hierarchien */
+    --text-color: #1f2937;       /* Haupttextfarbe (dunkelgrau) */
+    --text-light: #6b7280;       /* Hellere Textfarbe für Untertexte */
+    
+    /* Hintergrundfarben */
+    --bg-light: #f9fafb;         /* Heller Hintergrund für Sektionen */
+    --bg-white: #ffffff;         /* Reines Weiß für Karten und Header */
+    
+    /* Weitere Designelemente */
+    --border-color: #e5e7eb;     /* Hellgraue Rahmenfarbe */
+    
+    /* Schatten-Definitionen für Tiefeneffekte */
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Basis-Stile für den Body */
+body {
+    /* System-Schriftarten für optimale Lesbarkeit auf verschiedenen Betriebssystemen */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    
+    /* Zeilenhöhe für bessere Lesbarkeit */
+    line-height: 1.6;
+    
+    /* Verwendung der definierten CSS-Variablen */
+    color: var(--text-color);
+    background-color: var(--bg-white);
+}
+
+/* Container-Klasse für zentrierte Inhalte mit maximaler Breite */
+.container {
+    max-width: 1200px;          /* Maximale Breite für große Bildschirme */
+    margin: 0 auto;             /* Zentriert den Container horizontal */
+    padding: 0 2rem;            /* Seitlicher Abstand vom Bildschirmrand */
+}
+
+/* =============================================================================
+   Header und Navigation
+   ============================================================================= */
+
+/* Header-Styling mit klebendem Verhalten beim Scrollen */
+header {
+    background-color: var(--bg-white);    /* Weißer Hintergrund */
+    box-shadow: var(--shadow);            /* Subtiler Schatten für Tiefe */
+    position: sticky;                     /* Bleibt beim Scrollen am oberen Rand */
+    top: 0;                              /* Position am oberen Bildschirmrand */
+    z-index: 1000;                       /* Hoher z-index, um über anderen Elementen zu bleiben */
+}
+
+/* Container für die Navigation mit Flexbox-Layout */
+.nav-container {
+    max-width: 1200px;                   /* Maximale Breite wie bei .container */
+    margin: 0 auto;                      /* Zentriert den Navigationsbereich */
+    padding: 1rem 2rem;                  /* Innenabstände für Breathing Room */
+    display: flex;                       /* Flexbox für horizontales Layout */
+    justify-content: space-between;       /* Logo links, Navigation rechts */
+    align-items: center;                 /* Vertikale Zentrierung */
+}
+
+/* Logo-Styling */
+.logo {
+    font-size: 1.5rem;                   /* Größere Schrift für Erkennbarkeit */
+    font-weight: bold;                   /* Fette Schrift für Betonung */
+    color: var(--primary-color);         /* Primärfarbe für Markenidentität */
+}
+
+/* Navigationslinks-Container */
+.nav-links {
+    display: flex;                       /* Horizontale Anordnung der Links */
+    list-style: none;                    /* Entfernt Bullet-Points */
+    gap: 2rem;                          /* Abstand zwischen den Links */
+}
+
+/* Styling für einzelne Navigationslinks */
+.nav-links a {
+    text-decoration: none;               /* Entfernt Unterstreichung */
+    color: var(--text-color);           /* Standard-Textfarbe */
+    font-weight: 500;                   /* Mittleres Schriftgewicht */
+    transition: color 0.3s ease;        /* Sanfte Farbübergang bei Hover */
+}
+
+/* Hover-Effekt für Navigationslinks */
+.nav-links a:hover {
+    color: var(--primary-color);         /* Wechselt zur Primärfarbe */
+}
+
+/* =============================================================================
+   Hero-Sektion (Willkommensbereich)
+   ============================================================================= */
+
+/* Hero-Bereich mit Gradient-Hintergrund */
+.hero {
+    /* Diagonaler Gradient von Primär- zu Sekundärfarbe für visuellen Effekt */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;                        /* Weißer Text für Kontrast auf dunklem Hintergrund */
+    padding: 6rem 2rem;                  /* Großzügige Innenabstände für imposante Wirkung */
+    text-align: center;                  /* Zentrierte Textausrichtung */
+}
+
+/* Hauptüberschrift im Hero-Bereich */
+.hero-content h1 {
+    font-size: 3rem;                     /* Große Schrift für starke Wirkung */
+    margin-bottom: 1rem;                 /* Abstand zum nachfolgenden Element */
+    animation: fadeInUp 0.8s ease;       /* Fade-in Animation von unten */
+}
+
+/* Untertitel im Hero-Bereich */
+.hero-content p {
+    font-size: 1.25rem;                  /* Größere Schrift als Standardtext */
+    margin-bottom: 2rem;                 /* Abstand zum Button */
+    opacity: 0.9;                       /* Leichte Transparenz für Hierarchie */
+    animation: fadeInUp 0.8s ease 0.2s backwards; /* Animation mit Verzögerung */
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    display: inline-block;               /* Ermöglicht Padding und Margin */
+    padding: 1rem 2rem;                  /* Innenabstände für Klickfläche */
+    background-color: var(--bg-white);   /* Weißer Hintergrund für Kontrast */
+    color: var(--primary-color);         /* Primärfarbe für Text */
+    text-decoration: none;               /* Entfernt Link-Unterstreichung */
+    border-radius: 0.5rem;               /* Abgerundete Ecken */
+    font-weight: 600;                   /* Fettere Schrift für Betonung */
+    /* Übergangseffekte für Transform und Schatten */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animation mit weiterer Verzögerung für gestaffelte Effekte */
+    animation: fadeInUp 0.8s ease 0.4s backwards;
+}
+
+/* Hover-Effekt für den CTA-Button */
+.cta-button:hover {
+    transform: translateY(-2px);         /* Hebt den Button leicht an */
+    box-shadow: var(--shadow-lg);        /* Fügt größeren Schatten hinzu */
+}
+
+/* =============================================================================
+   Projekte-Sektion
+   ============================================================================= */
+
+/* Container für die Projekte-Sektion */
+.projects {
+    padding: 4rem 2rem;                  /* Großzügige Abstände oben/unten und seitlich */
+    background-color: var(--bg-light);   /* Heller Hintergrund zur Abgrenzung */
+}
+
+/* Überschrift der Projekte-Sektion */
+.projects h2 {
+    text-align: center;                  /* Zentrierte Überschrift */
+    font-size: 2.5rem;                   /* Große, auffällige Schrift */
+    margin-bottom: 3rem;                 /* Abstand zu den Projekt-Karten */
+    color: var(--text-color);            /* Standard-Textfarbe */
+}
+
+/* Grid-Layout für responsive Projektanordnung */
+.projects-grid {
+    display: grid;                       /* CSS Grid für flexible Layouts */
+    /* Auto-fit mit Mindestbreite sorgt für responsive Anordnung */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;                          /* Abstand zwischen den Karten */
+    margin-top: 2rem;                   /* Abstand zur Überschrift */
+}
+
+/* Styling für einzelne Projekt-Karten */
+.project-card {
+    background-color: var(--bg-white);   /* Weißer Hintergrund für Karten */
+    border-radius: 0.75rem;              /* Abgerundete Ecken für modernen Look */
+    overflow: hidden;                   /* Verhindert Überlauf von Kinderelementen */
+    box-shadow: var(--shadow);           /* Subtiler Schatten für Tiefe */
+    /* Übergangseffekte für Hover-Animationen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-Effekt für Projekt-Karten */
+.project-card:hover {
+    transform: translateY(-5px);         /* Hebt die Karte beim Hover an */
+    box-shadow: var(--shadow-lg);        /* Verstärkt den Schatten-Effekt */
+}
+
+.project-image {
+    background-color: var(--bg-light);
+    padding: 3rem;
+    text-align: center;
+}
+
+.placeholder-image {
+    font-size: 4rem;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.project-content p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.project-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--secondary-color);
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background-color: var(--bg-white);
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.skills h3 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill {
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.contact p {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============================================================================
+   Responsive Design - Mobile und Tablet Optimierung
+   ============================================================================= */
+
+/* Tablet-Ansicht und kleinere Desktop-Bildschirme (768px und darunter) */
+@media (max-width: 768px) {
+    /* Reduziert den Abstand zwischen Navigationslinks */
+    .nav-links {
+        gap: 1rem;
+    }
+
+    /* Verkleinert die Hero-Überschrift für bessere Lesbarkeit auf Tablets */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* Anpassung des Hero-Untertexts */
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Reduziert alle Hauptüberschriften für kompaktere Darstellung */
+    .projects h2,
+    .about h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    /* Zwingt Projekte in eine einspaltrige Ansicht */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Macht About-Sektion einspaltig für bessere Lesbarkeit */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Stapelt Navigation vertikal für bessere Touch-Bedienung */
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Zentriert vertikale Navigation */
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Mobile Geräte (480px und darunter) */
+@media (max-width: 480px) {
+    /* Reduziert Hero-Padding für kleinere Bildschirme */
+    .hero {
+        padding: 4rem 1rem;
+    }
+
+    /* Weitere Verkleinerung der Hero-Überschrift für Smartphones */
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Reduziert Container-Padding für mehr nutzbaren Platz */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Stapelt Kontakt-Links vertikal für Touch-Freundlichkeit */
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Macht Kontakt-Buttons vollbreit mit maximaler Breite */
+    .contact-button {
+        width: 100%;              /* Volle Breite für einfachere Touch-Bedienung */
+        max-width: 300px;         /* Begrenzt die maximale Breite für Ästhetik */
+    }
+}
